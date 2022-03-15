@@ -18,3 +18,11 @@ asm (".hidden __stack_chk_fail_local\n"
      "__stack_chk_fail = __stack_chk_fail_local");
 # endif
 #endif
+
+#if !defined __ASSEMBLER__ && ((!IS_IN (libc) || !defined SHARED) \
+			       && !defined NO_MEMPCPY_STPCPY_REDIRECT)
+/* Redirect calls to __builtin_mempcpy and __builtin_stpcpy to call
+   __mempcpy and __stpcpy if not inlined.  */
+__asm__ ("mempcpy = __mempcpy");
+__asm__ ("stpcpy = __stpcpy");
+#endif
