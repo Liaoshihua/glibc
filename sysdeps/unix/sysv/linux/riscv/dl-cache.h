@@ -54,13 +54,15 @@
       static const char* lib_dirs[] = {					\
 	"/lib64/lp64d",							\
 	"/lib64/lp64",							\
+	"/lib64/ilp32d",							\
+	"/lib64/ilp32",							\
 	"/lib32/ilp32d",						\
 	"/lib32/ilp32",							\
 	NULL,								\
       };								\
       const size_t lib_len = sizeof ("/lib") - 1;			\
       size_t len = strlen (dir);					\
-      char path[len + 10];						\
+      char path[len + 12];						\
       const char **ptr;							\
 									\
       memcpy (path, dir, len + 1);					\

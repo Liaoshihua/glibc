@@ -21,8 +21,10 @@
 #define LD_SO_PREFIX "/lib/ld-linux-"
 #define LD_SO_SUFFIX ".so.1"
 
-#if __riscv_xlen == 64
+#if __riscv_xlen == 64 && (__SIZEOF_POINTER__) == 8
 # define LD_SO_ABI "riscv64-lp64"
+#elif __riscv_xlen == 64
+# define LD_SO_ABI "riscv64-ilp32"
 #else
 # define LD_SO_ABI "riscv32-ilp32"
 #endif

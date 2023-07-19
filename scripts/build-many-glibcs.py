@@ -379,6 +379,21 @@ class Context(object):
                                  '--disable-multilib'])
         self.add_config(arch='riscv64',
                         os_name='linux-gnu',
+                        variant='rv64imac-ilp32',
+                        gcc_cfg=['--with-arch=rv64imac', '--with-abi=ilp32',
+                                 '--disable-multilib'])
+        self.add_config(arch='riscv64',
+                        os_name='linux-gnu',
+                        variant='rv64imafdc-ilp32',
+                        gcc_cfg=['--with-arch=rv64imafdc', '--with-abi=ilp32',
+                                 '--disable-multilib'])
+        self.add_config(arch='riscv64',
+                        os_name='linux-gnu',
+                        variant='rv64imafdc-ilp32d',
+                        gcc_cfg=['--with-arch=rv64imafdc', '--with-abi=ilp32d',
+                                 '--disable-multilib'])
+        self.add_config(arch='riscv64',
+                        os_name='linux-gnu',
                         variant='rv64imac-lp64',
                         gcc_cfg=['--with-arch=rv64imac', '--with-abi=lp64',
                                  '--disable-multilib'])

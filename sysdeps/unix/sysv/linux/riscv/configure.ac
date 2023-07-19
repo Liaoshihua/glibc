@@ -39,6 +39,12 @@ lp64-riscv/rv64/*)
 lp64d-riscv/rv64/*)
   LIBC_SLIBDIR_RTLDDIR([lib64/lp64d], [lib])
   ;;
+ilp32-riscv/rv64/*)
+  LIBC_SLIBDIR_RTLDDIR([lib64/ilp32], [lib])
+  ;;
+ilp32d-riscv/rv64/*)
+  LIBC_SLIBDIR_RTLDDIR([lib64/ilp32d], [lib])
+  ;;
 ilp32-riscv/rv32/*)
   LIBC_SLIBDIR_RTLDDIR([lib32/ilp32], [lib])
   ;;
