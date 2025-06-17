@@ -24,7 +24,11 @@
 
 struct sigcontext {
   /* gregs[0] holds the program counter.  */
-  unsigned long int gregs[32];
+#if __riscv_xlen == 32
+   unsigned long int gregs[32];
+#else
+  unsigned long long int gregs[32];
+#endif
   unsigned long long int fpregs[66] __attribute__ ((__aligned__ (16)));
 };
 

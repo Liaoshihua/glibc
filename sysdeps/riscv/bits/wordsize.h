@@ -18,6 +18,8 @@
 
 #if __riscv_xlen == (__SIZEOF_POINTER__ * 8)
 # define __WORDSIZE __riscv_xlen
+#elif __riscv_xlen == 64 && __SIZEOF_POINTER__ == 4
+# define __WORDSIZE 32
 #else
 # error unsupported ABI
 #endif

@@ -123,6 +123,9 @@
 #undef CSKY_HARD_FLOAT_ABI
 
 /* RISC-V integer ABI for ld.so.  */
+#undef RISCV_ISA_XLEN
+
+/* RISC-V Pointer ABI for ld.so.  */
 #undef RISCV_ABI_XLEN
 
 /* RISC-V floating-point ABI for ld.so.  */
